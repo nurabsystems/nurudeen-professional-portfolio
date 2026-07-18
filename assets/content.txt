@@ -1,0 +1,64 @@
+Personal Information
+
+ Full Name:
+Nurudeen AbdulSalam
+
+Location:
+Lagos, Nigeria
+
+Email:
+(nurudeen.abdulsalam@gmail.coml)
+
+Phone:
+(+234 803 710 6942)
+
+GitHub:
+(https://github.com/remotedevpro)
+
+LinkedIn:
+(https://www.linkedin.com/in/nurudeen-abdulsalam-6b237b4b/)
+
+
+
+Professional Summary
+
+I am an IT Infrastructure Specialist and
+Web Developer with extensive experience
+in network administration, data management,
+technology support, and software solutions.
+
+My passion lies in building reliable,
+user-focused digital experiences while
+leveraging years of enterprise IT expertise.
+
+
+Services
+
+Web Development
+
+Software Development
+
+IT Infrastructure
+
+Network Design
+
+Technology Support
+
+Data Management
+
+SCADA Solutions
+
+Technology Consulting
+
+
+
+Projects
+
+WeatherWise App
+
+Tech-NovaX Smart Visitor Reception System
+
+tech-novax-responsive-website-with-bootstrap
+
+betechified-frontend-capstone-project 
+

@@ -1,0 +1,263 @@
+ /* ===================================
+   RESET
+=================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+
+/* ===================================
+   ROOT VARIABLES
+=================================== */
+
+:root{
+
+    --primary:#2563eb;
+    --secondary:#0ea5e9;
+    --accent:#14b8a6;
+
+    --bg:#f8fafc;
+    --surface:#ffffff;
+
+    --text:#0f172a;
+    --muted:#64748b;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    --transition:.3s ease;
+}
+
+
+
+/*DARK MODE */
+
+[data-theme="dark"]{
+
+    --primary:#3b82f6;
+    --secondary:#38bdf8;
+    --accent:#2dd4bf;
+
+    --bg:#020617;
+    --surface:#0f172a;
+
+    --text:#f8fafc;
+    --muted:#94a3b8;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.35);
+}
+
+
+
+/*BODY STYLING*/
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    transition:.4s ease;
+
+    line-height:1.7;
+}
+
+
+/*HEADINGS*/
+
+h1,h2,h3,h4,h5,h6{
+
+    font-family:'Poppins',sans-serif;
+
+    font-weight:700;
+
+    color:var(--text);
+}
+
+
+
+/*LINKS*/
+
+a{
+
+    text-decoration:none;
+
+    transition:var(--transition);
+}
+
+
+/*SCROLL PROGRESS BAR*/
+
+.scroll-progress-container{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    z-index:9999;
+}
+
+.scroll-progress-bar{
+
+    width:0;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--accent)
+    );
+}
+
+
+
+/*TOP BAR*/
+
+.top-bar{
+
+    background:#0f172a;
+
+    color:white;
+
+    font-size:.85rem;
+
+    padding:.65rem 0;
+}
+
+.top-bar-content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.top-left,
+.top-right{
+
+    display:flex;
+
+    gap:1.5rem;
+}
+
+.top-right a{
+
+    color:white;
+}
+
+
+/*NAVBAR FOUNDATION*/
+
+.custom-navbar{
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:var(--shadow);
+
+    transition:.4s ease;
+}
+
+
+/*BRAND*/
+
+.navbar-brand{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.brand-main{
+
+    font-size:1.5rem;
+
+    font-weight:800;
+
+    color:var(--primary);
+}
+
+.brand-sub{
+
+    font-size:.7rem;
+
+    color:var(--muted);
+}
+
+
+/* NAV LINKS*/
+
+.nav-link{
+
+    font-weight:600;
+
+    color:var(--text);
+
+    margin:0 .5rem;
+}
+
+.nav-link:hover{
+
+    color:var(--primary);
+}
+
+/*THEME TOGGLE*/
+
+.theme-toggle-btn{
+
+    border:none;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    box-shadow:var(--shadow);
+}
+
+
+/*FOOTER FOUNDATION*/
+
+.footer-section{
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:5rem 0;
+}
+
+.footer-section a{
+
+    color:white;
+}
