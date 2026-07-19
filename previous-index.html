@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Character Encoding -->
+    <meta charset="UTF-8" />
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Nurudeen AbdulSalam Professional Portfolio"
+    />
+
+    <meta name="author" content="Nurudeen AbdulSalam" />
+
+    <meta name="theme-color" content="#2563eb" />
+
+    <meta property="og:title" content="Nurudeen AbdulSalam Portfolio" />
+
+    <meta
+      property="og:description"
+      content="Technology Consultant, IT Infrastructure Specialist and Web Developer"
+    />
+
+    <meta property="og:image" content="assets/images/profile-photo.jpg" />
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <!-- Page Title -->
+    <title>NURAB Technology Solutions</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="scroll-progress-container">
+      <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- HEADER GOES HERE -->
+
+    <div class="top-bar d-none d-lg-block">
+      <div class="container">
+        <div class="top-bar-content">
+          <div class="top-left">
+            <span>
+              <i class="bi bi-envelope"></i>
+              nurabsystems@gmail.com
+            </span>
+
+            <span>
+              <i class="bi bi-telephone"></i>
+              +234 803 710 6942
+            </span>
+
+            <span>
+              <i class="bi bi-geo-alt"></i>
+              Lagos, Nigeria
+            </span>
+          </div>
+
+          <div class="top-right">
+            <a href="#">
+              <i class="bi bi-github"></i>
+            </a>
+
+            <a href="#">
+              <i class="bi bi-linkedin"></i>
+            </a>
+
+            <a href="assets/docs/Nurudeen-AbdulSalam-CV.pdf">
+              <i class="bi bi-download"></i>
+
+              Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+      <div class="container">
+        <!-- Logo -->
+
+        <a class="navbar-brand" href="index.html">
+          <span class="brand-main"> NURAB </span>
+
+          <span class="brand-sub"> Technology Solutions </span>
+        </a>
+
+        <!-- Mobile Toggle -->
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mobileMenu"
+        >
+          <i class="bi bi-list"></i>
+        </button>
+
+        <!-- Desktop Menu -->
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link"> Home </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="about.html" class="nav-link"> About </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link"> Projects </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="services.html" class="nav-link"> Services </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="resume.html" class="nav-link"> Resume </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link"> Contact </a>
+            </li>
+          </ul>
+
+          <!-- Right Actions -->
+
+          <div class="navbar-actions">
+            <button id="themeToggle" class="theme-toggle-btn">
+              <i class="bi bi-moon-stars"></i>
+            </button>
+
+            <a href="contact.html" class="btn btn-primary"> Hire Me </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+      <div class="offcanvas-header">
+        <h5>NURAB</h5>
+
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="navbar-nav">
+          <li>
+            <a href="index.html" class="nav-link"> Home </a>
+          </li>
+
+          <li>
+            <a href="about.html" class="nav-link"> About </a>
+          </li>
+
+          <li>
+            <a href="projects.html" class="nav-link"> Projects </a>
+          </li>
+
+          <li>
+            <a href="services.html" class="nav-link"> Services </a>
+          </li>
+
+          <li>
+            <a href="resume.html" class="nav-link"> Resume </a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="nav-link"> Contact </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main>
+      <!-- HERO SECTION -->
+
+      <section id="hero" class="hero-section">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-orb orb-3"></div>
+
+        <div class="container">
+          <div class="row align-items-center min-vh-100">
+            <!-- LEFT COLUMN -->
+
+            <div class="col-lg-7" data-aos="fade-right">
+              <span class="hero-greeting"> Hello, I'm </span>
+
+              <div class="hero-badge">
+                <i class="bi bi-stars"></i>
+                Available for Remote Opportunities
+              </div>
+
+              <h1 class="hero-title">Nurudeen AbdulSalam</h1>
+
+              <h2 class="hero-role">
+                <span id="typingText"></span>
+                Frontend Web Developer & Technology Solutions Architect
+              </h2>
+
+              <p class="hero-description">
+                I design and build modern web applications, IT infrastructure
+                solutions, and data-driven systems that help organizations
+                operate efficiently, scale confidently, and achieve digital
+                transformation goals.
+              </p>
+
+              <div class="hero-buttons">
+                <a href="projects.html" class="btn btn-primary btn-lg">
+                  View Projects
+                </a>
+
+                <a href="contact.html" class="btn btn-outline-primary btn-lg">
+                  Hire Me
+                </a>
+
+                <a
+                  href="assets/docs/Nurudeen-AbdulSalam-CV.pdf"
+                  class="btn btn-dark btn-lg"
+                >
+                  Download CV
+                </a>
+              </div>
+
+              <div class="trust-metrics">
+                <span>
+                  <i class="bi bi-check-circle-fill"></i>
+                  10+ Years Experience
+                </span>
+
+                <span>
+                  <i class="bi bi-check-circle-fill"></i>
+                  Network & Systems Engineering
+                </span>
+
+                <span>
+                  <i class="bi bi-check-circle-fill"></i>
+                  Frontend Web Development
+                </span>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+
+            <div class="col-lg-5 text-center" data-aos="fade-left">
+              <div class="hero-image-wrapper">
+                <div class="hero-glow"></div>
+
+                <img
+                  src="assets/images/profile-photo.png"
+                  alt="Nurudeen AbdulSalam"
+                  class="img-fluid hero-image"
+                />
+
+                <div class="tech-badge badge-html">HTML5</div>
+                <div class="tech-badge badge-css">CSS3</div>
+                <div class="tech-badge badge-js">JavaScript</div>
+                <div class="tech-badge badge-bs">Bootstrap</div>
+                <div class="tech-badge badge-django">Django</div>
+                <div class="tech-badge badge-node">Node.js</div>
+              </div>
+
+              <div class="tech-stack-preview"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================
+     FEATURED EXPERTISE
+===================================== -->
+      <section class="expertise-section" id="expertise">
+        <div class="expertise-bg-circle circle-1"></div>
+        <div class="expertise-bg-circle circle-2"></div>
+        <div class="container">
+          <div class="section-header text-center">
+
+            <span class="section-badge">
+                Core Expertise
+            </span>
+
+            <h2 class="section-title">
+                Building Software, Infrastructure
+                & Data Solutions
+            </h2>
+
+            <p class="section-description">
+                From modern web applications to enterprise IT infrastructure,
+                I deliver technology solutions that improve performance,
+                reliability and business growth.
+            </p>     
+
+
+            <div class="row g-4 mt-4">
+                    <!-- Card 1 -->
+
+                <div class="col-lg-4 col-md-6">
+                  <div class="expertise-card reveal-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="expertise-icon">
+                      <i class="bi bi-code-slash"></i>
+                    </div>
+
+                    <h4>Frontend Development</h4>
+
+                    <p>
+                        Modern responsive interfaces,
+                        landing pages and web applications
+                        built with HTML, CSS, JavaScript      
+                        and Bootstrap.
+                    </p>
+
+                    <div class="card-number">01</div>
+                  </div>
+
+              
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="col-lg-4 col-md-6">
+              <div class="expertise-card reveal-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="expertise-icon">
+                  <i class="bi bi-server"></i>
+                </div>
+
+                <h4>Backend Development</h4>
+
+                <p>
+                  Building scalable server-side applications using Django,
+                  Node.js and databases.
+                </p>
+
+                <div class="card-number">02</div>
+              </div>
+
+             
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="col-lg-4 col-md-6">
+              <div class="expertise-card reveal-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="expertise-icon">
+                  <i class="bi bi-hdd-network"></i>
+                </div>
+
+                <h4>IT Infrastructure</h4>
+
+                <p>
+                  Enterprise IT systems design, implementation and maintenance.
+                </p>
+
+                <div class="card-number">03</div>
+              </div>
+
+            </div>
+
+            <!-- Card 4 -->
+
+            <div class="col-lg-4 col-md-6">
+              <div class="expertise-card reveal-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="expertise-icon">
+                  <i class="bi bi-diagram-3"></i>
+                </div>
+
+                <h4>Network Engineering</h4>
+
+                <p>
+                  Secure, reliable and scalable network architecture and
+                  support.
+                </p>
+
+                <div class="card-number">04</div>
+              </div>
+
+              
+            </div>
+
+            <!-- Card 5 -->
+
+            
+            
+            <div class="col-lg-4 col-md-6">
+              <div class="expertise-card reveal-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="expertise-icon">
+                  <i class="bi bi-database"></i>
+                </div>
+
+                <h4>Data Management</h4>
+
+                <p>
+                  Real-time data acquisition, processing, reporting and
+                  analytics.
+                </p>
+
+                <div class="card-number">05</div>
+              </div>              
+            </div>
+
+
+
+
+            <!-- Card 6 -->
+
+            
+            
+            <div class="col-lg-4 col-md-6">
+              <div class="expertise-card reveal-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="expertise-icon">
+                  <i class="bi bi-lightbulb"></i>
+                </div>
+
+                <h4>Technology Consulting</h4>
+
+                <p>
+                  Helping organizations align technology with business goals.
+                </p>
+
+                <div class="card-number">06</div>
+              </div>              
+            </div>
+
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================
+     STATISTICS SECTION
+===================================== -->
+
+      <section class="stats-section">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-4">
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stat-icon">
+                  <i class="bi bi-award"></i>
+                </div>
+                <h2>15+</h2>
+
+                <p>Years Technology Experience</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="stat-icon">
+                  <i class="bi bi-code-square"></i>
+                </div>
+
+                <h2>10+</h2>
+
+                <p>Portfolio Projects</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="stat-icon">
+                  <i class="bi bi-phone"></i>
+                </div>
+
+                <h2>100%</h2>
+
+                <p>Responsive Solutions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER GOES HERE -->
+
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <h4>NURAB</h4>
+
+            <p>
+              Building Reliable Technology Solutions Through Software,
+              Infrastructure & Innovation.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <h5>Quick Links</h5>
+
+            <ul>
+              <li><a href="index.html">Home</a></li>
+
+              <li><a href="about.html">About</a></li>
+
+              <li><a href="projects.html">Projects</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <h5>Contact</h5>
+
+            <p>nurabsystems@gmail.com</p>
+
+            <p>Lagos, Nigeria</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/portfolio-script.js"></script>
+  </body>
+</html>
