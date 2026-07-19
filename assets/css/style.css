@@ -110,11 +110,23 @@ a {
 }
 
 /* NAVBAR FOUNDATION */
+
+/*
 .custom-navbar {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow);
   transition: 0.4s ease;
+}
+*/
+
+.custom-navbar{
+
+    background:var(--surface);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:var(--shadow);
 }
 
 /* BRAND */
@@ -2237,6 +2249,87 @@ background:#4247d60f;
 .footer-bottom{
     text-align:center;
 }
+
+
+
+.page-hero{
+
+    min-height:60vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        rgba(37,99,235,.10),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at bottom right,
+        rgba(20,184,166,.10),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        var(--bg),
+        var(--surface)
+    );
+}
+
+.page-title{
+
+    font-size:clamp(
+        3rem,
+        6vw,
+        5rem
+    );
+
+    font-weight:900;
+}
+
+.page-subtitle{
+
+    max-width:800px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    font-size:1.15rem;
+}
+
+
+
+
+.tech-badges span:hover{
+
+    transform:
+    translateY(-5px);
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+}
+
+
+
+
+
+
+
 
 
 

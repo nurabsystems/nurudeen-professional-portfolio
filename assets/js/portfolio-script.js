@@ -1,4 +1,76 @@
- document.addEventListener("DOMContentLoaded", () => {
+/* ===========================
+   THEME TOGGLE
+=========================== */
+
+const themeToggle =
+document.getElementById("themeToggle");
+
+const currentTheme =
+localStorage.getItem("theme");
+
+if(currentTheme){
+
+    document.documentElement.setAttribute(
+        "data-theme",
+        currentTheme
+    );
+
+    updateThemeIcon(currentTheme);
+}
+
+themeToggle?.addEventListener(
+    "click",
+    () => {
+
+        let theme =
+        document.documentElement.getAttribute(
+            "data-theme"
+        );
+
+        if(theme === "dark"){
+
+            theme = "light";
+
+        }else{
+
+            theme = "dark";
+        }
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            theme
+        );
+
+        localStorage.setItem(
+            "theme",
+            theme
+        );
+
+        updateThemeIcon(theme);
+    }
+);
+
+
+function updateThemeIcon(theme){
+
+    const icon =
+    themeToggle.querySelector("i");
+
+    if(theme === "dark"){
+
+        icon.className =
+        "bi bi-sun-fill";
+
+    }else{
+
+        icon.className =
+        "bi bi-moon-stars-fill";
+    }
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
     // 1. Initialize AOS
     AOS.init({
         duration: 1200,
