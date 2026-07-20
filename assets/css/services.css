@@ -1,0 +1,168 @@
+/* ==========================================================================
+   SERVICES CONTAINER GRID & FILTER INTERFACE
+   ========================================================================== */
+
+.services-grid-section {
+  padding: 6rem 0 10rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc, #eef5ff);
+  transition: background 0.4s ease;
+}
+
+html[data-theme="dark"] .services-grid-section {
+  background: linear-gradient(180deg, #0f172a, #0b1324);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* --- Dynamic Filter Button Navigation Controls --- */
+.filter-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: white;
+  color: #475569;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[data-theme="dark"] .filter-btn {
+  background: #1e293b;
+  color: #cbd5e1;
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+html[data-theme="dark"] .filter-btn:hover {
+  color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white !important;
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+/* --- Filter Micro-Transitions Classes --- */
+.highlight-card.hidden {
+  display: none !important;
+  opacity: 0 !important;
+  transform: scale(0.9) translateY(15px) !important;
+}
+
+/* ==========================================================================
+   DISTINCT UI/UX GRADIENT SCHEMES PER SERVICE CARD CATEGORY
+   ========================================================================== */
+
+/* Light Theme Card Gradients */
+.highlight-card[data-category="frontend"]       { --card-grad-start: #f3f8ff; --card-grad-end: #e2f0ff; --icon-accent: #2563eb; }
+.highlight-card[data-category="backend"]        { --card-grad-start: #fdf2f8; --card-grad-end: #fce7f3; --icon-accent: #db2777; }
+.highlight-card[data-category="infrastructure"] { --card-grad-start: #f0fdf4; --card-grad-end: #dcfce7; --icon-accent: #16a34a; }
+.highlight-card[data-category="network"]        { --card-grad-start: #fff7ed; --card-grad-end: #ffedd5; --icon-accent: #ea580c; }
+.highlight-card[data-category="data"]           { --card-grad-start: #faf5ff; --card-grad-end: #f3e8ff; --icon-accent: #9333ea; }
+.highlight-card[data-category="consulting"]     { --card-grad-start: #f0fdfa; --card-grad-end: #ccfbf1; --icon-accent: #0d9488; }
+
+/* Dark Theme Card Gradients */
+html[data-theme="dark"] .highlight-card[data-category="frontend"]       { --card-grad-start: #0f1e36; --card-grad-end: #0b172a; --icon-accent: #3b82f6; }
+html[data-theme="dark"] .highlight-card[data-category="backend"]        { --card-grad-start: #241224; --card-grad-end: #0f172a; --icon-accent: #ec4899; }
+html[data-theme="dark"] .highlight-card[data-category="infrastructure"] { --card-grad-start: #0f2419; --card-grad-end: #0f172a; --icon-accent: #22c55e; }
+html[data-theme="dark"] .highlight-card[data-category="network"]        { --card-grad-start: #241a12; --card-grad-end: #0f172a; --icon-accent: #f97316; }
+html[data-theme="dark"] .highlight-card[data-category="data"]           { --card-grad-start: #1e122b; --card-grad-end: #0f172a; --icon-accent: #a855f7; }
+html[data-theme="dark"] .highlight-card[data-category="consulting"]     { --card-grad-start: #0c2021; --card-grad-end: #0f172a; --icon-accent: #14b8a6; }
+
+/* ==========================================================================
+   RECYCLED CARD CARD ARCHITECTURE WITH GLOWING EFFECTS
+   ========================================================================== */
+
+.services-grid-section .highlight-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 24px;
+  padding: 2.5rem;
+  position: relative;
+  border: 1px solid transparent;
+  overflow: hidden;
+  z-index: 1;
+
+  /* Dynamically mapping the unique background variables */
+  background: linear-gradient(145deg, var(--card-grad-start) 0%, var(--card-grad-end) 100%);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+  
+  transition:
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.4s ease;
+}
+
+/* --- Shimmering Outer Border Structure --- */
+.services-grid-section .highlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px; 
+  background: linear-gradient(135deg, var(--icon-accent), #06b6d4, var(--primary), var(--icon-accent));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+  animation: borderGlowGradient 8s linear infinite;
+}
+
+@keyframes borderGlowGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- HIGH-RESPONSE HOVER GESTURES --- */
+.services-grid-section .highlight-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  /* Uses the custom category start token to create a beautifully matched ambient glow color */
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.08), 0 0 25px var(--card-grad-start);
+}
+
+html[data-theme="dark"] .services-grid-section .highlight-card:hover {
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.55), 0 0 30px rgba(37, 99, 235, 0.2);
+}
+
+.services-grid-section .highlight-card:hover::before {
+  animation-duration: 3s;
+}
