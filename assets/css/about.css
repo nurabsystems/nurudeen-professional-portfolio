@@ -1,0 +1,395 @@
+/* ==========================================================================
+   TECHNOLOGY STACK STYLES (Adaptive Theme & Scroll Matrix)
+   ========================================================================== */
+
+.tech-stack-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- Animated Horizontal Rule Style --- */
+.animated-hr-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20px;
+}
+
+.animated-hr-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--bs-primary),
+    transparent
+  );
+  opacity: 0.4;
+}
+
+.animated-hr-dot {
+  position: relative;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  background-color: var(--bs-body-bg);
+  border: 2px solid var(--bs-primary);
+  color: var(--bs-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.2);
+  animation: hrPulse 3s infinite ease-in-out;
+}
+
+@keyframes hrPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+  }
+}
+
+/* --- Smooth Scroll Tracking Layout --- */
+.tech-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px 10px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bs-primary) transparent;
+}
+
+/* Custom Scrollbar for modern webkits */
+.tech-scroll-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.tech-scroll-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tech-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--bs-primary);
+  border-radius: 10px;
+  opacity: 0.3;
+}
+
+.tech-scroll-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding-bottom: 10px;
+}
+
+/* --- Modular Card Design (Inherits Parent Toggle Variables) --- */
+.tech-card {
+  width: 160px;
+  background: var(--bs-body-bg);
+  border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.08);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body[data-theme="dark"] .tech-card {
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--bs-primary);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
+}
+
+/* --- Technology Icons Branding Matrix --- */
+.tech-icon-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.tech-card:hover .tech-icon-box {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.tech-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--bs-heading-color, inherit);
+  font-family: "Poppins", sans-serif;
+}
+
+.tech-category {
+  font-size: 0.75rem;
+  color: var(--bs-secondary-color);
+  font-weight: 500;
+}
+
+/* Visual color branding using custom light configurations */
+.html5 {
+  background-color: rgba(227, 79, 38, 0.1);
+  color: #e34f26;
+}
+.css3 {
+  background-color: rgba(21, 114, 182, 0.1);
+  color: #1572b6;
+}
+.js {
+  background-color: rgba(247, 223, 30, 0.15);
+  color: #f7df1e;
+}
+.bootstrap {
+  background-color: rgba(121, 40, 244, 0.1);
+  color: #7928f4;
+}
+.django {
+  background-color: rgba(9, 46, 32, 0.15);
+  color: #092e20;
+}
+body[data-theme="dark"] .django {
+  color: #44b78b;
+}
+.nodejs {
+  background-color: rgba(67, 133, 61, 0.1);
+  color: #43853d;
+}
+.postgresql {
+  background-color: rgba(51, 103, 145, 0.1);
+  color: #336791;
+}
+.mongodb {
+  background-color: rgba(71, 162, 72, 0.1);
+  color: #47a248;
+}
+.linux {
+  background-color: rgba(var(--bs-emphasis-color-rgb), 0.05);
+  color: var(--bs-emphasis-color);
+}
+.networking {
+  background-color: rgba(13, 110, 253, 0.1);
+  color: #0d6efd;
+}
+.git {
+  background-color: rgba(240, 80, 50, 0.1);
+  color: #f05032;
+}
+.github {
+  background-color: rgba(var(--bs-emphasis-color-rgb), 0.08);
+  color: var(--bs-emphasis-color);
+}
+
+/* ==========================================================================
+   CAREER TIMELINE STYLES (Adaptive Desktop/Mobile Tree)
+   ========================================================================== */
+
+.career-timeline-section {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Vertical Center Spine */
+.timeline-center-line {
+  position: absolute;
+  width: 4px;
+  background: linear-gradient(
+    to bottom,
+    var(--bs-primary) 0%,
+    rgba(37, 99, 235, 0.1) 100%
+  );
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Individual Timeline Row Block */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+/* Alternating Alignment Setup */
+.timeline-item.left-item {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right-item {
+  left: 50%;
+  text-align: left;
+}
+
+/* Interactive Center Nodes */
+.timeline-badge {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--bs-body-bg);
+  border: 3px solid var(--bs-primary);
+  color: var(--bs-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  top: 26px;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timeline-item.left-item .timeline-badge {
+  right: -23px;
+}
+
+.timeline-item.right-item .timeline-badge {
+  left: -23px;
+}
+
+/* Timeline Cards */
+.timeline-card {
+  position: relative;
+  background: var(--bs-body-bg);
+  border: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.07);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body[data-theme="dark"] .timeline-card {
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.timeline-date {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: white;
+  background: var(--bs-primary);
+  padding: 0.35rem 1.25rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.timeline-card h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--bs-heading-color);
+}
+
+.timeline-card p {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: var(--bs-secondary-color);
+  margin: 0;
+}
+
+/* --- High Performance Hover Micro-interactions --- */
+.timeline-item:hover .timeline-badge {
+  background-color: var(--bs-primary);
+  color: #fff;
+  transform: scale(1.2) rotate(360deg);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.12);
+}
+
+/* Decorative side connectors */
+.timeline-indicator {
+  position: absolute;
+  top: 35px;
+  width: 12px;
+  height: 12px;
+  background: var(--bs-body-bg);
+  border-top: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.07);
+  border-left: 1px solid rgba(var(--bs-emphasis-color-rgb), 0.07);
+  transition: all 0.4s ease;
+}
+
+.timeline-card:hover .timeline-indicator {
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+.timeline-item.left-item .timeline-indicator {
+  right: -6px;
+  transform: rotate(135deg);
+}
+
+.timeline-item.right-item .timeline-indicator {
+  left: -6px;
+  transform: rotate(-45deg);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT CONSTRAINTS (Mobile Breakdown)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .timeline-center-line {
+    left: 30px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 15px;
+  }
+
+  .timeline-item.left-item,
+  .timeline-item.right-item {
+    left: 0;
+    text-align: left;
+  }
+
+  .timeline-item.left-item .timeline-badge,
+  .timeline-item.right-item .timeline-badge {
+    left: 7px;
+  }
+
+  .timeline-item.left-item .timeline-indicator,
+  .timeline-item.right-item .timeline-indicator {
+    left: -6px;
+    transform: rotate(-45deg);
+  }
+}
