@@ -1,0 +1,714 @@
+/* ==================================
+   RESUME PAGE FOUNDATION
+================================== */
+
+.resume-hero,
+.career-journey,
+.oil-gas-section,
+.enterprise-section,
+.software-journey,
+.resume-tech-stack,
+.certifications-section,
+.resume-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating gradient orbs */
+
+.resume-hero::before,
+.career-journey::before,
+.software-journey::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15), transparent 70%);
+
+  border-radius: 50%;
+
+  top: -150px;
+  right: -150px;
+
+  animation: floatingOrb 15s infinite ease-in-out;
+}
+
+@keyframes floatingOrb {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-40px) rotate(180deg);
+  }
+}
+
+.resume-hero {
+  min-height: 90vh;
+
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(135deg, var(--bg), var(--surface));
+}
+
+.resume-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+
+  font-weight: 900;
+
+  line-height: 1.1;
+
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.resume-hero-image {
+  border-radius: 32px;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+
+  animation: portraitFloat 6s ease-in-out infinite;
+}
+
+@keyframes portraitFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Clean up timeline item wrapper */
+
+
+
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+
+  gap: 4rem;
+
+  margin: 6rem 0;
+
+  margin-bottom: 5rem;
+}
+
+.timeline-item.right {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.65);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 28px;
+
+  padding: 2rem;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+
+  transition: 0.4s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-10px);
+
+  box-shadow: 0 25px 60px rgba(37, 99, 235, 0.18);
+}
+
+
+/* Fix image height squeeze */
+.timeline-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 2px solid rgba(37, 99, 235, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  transition: all 0.5s ease;
+}
+
+
+
+.timeline-image img:hover {
+  transform: scale(1.04);
+}
+
+
+/* ==================================
+   OIL & GAS SECTION (THEME-AWARE)
+================================== */
+
+.oil-gas-section {
+  padding: 5rem 0;
+  background: var(--bg, #f8fafc);
+  color: var(--text, #1e293b);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Section Header Typography */
+.oil-gas-section .section-title {
+  color: var(--text-heading, var(--text));
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.oil-gas-section p {
+  color: var(--text-muted, rgba(30, 41, 59, 0.8));
+  line-height: 1.6;
+}
+
+/* Metrics Cards */
+.oil-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.metric {
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+  backdrop-filter: blur(12px);
+  padding: 1.5rem;
+  border-radius: 20px;
+  flex: 1 1 140px;
+  text-align: center;
+  box-shadow: var(--shadow, 0 10px 30px rgba(0, 0, 0, 0.05));
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
+}
+
+.metric:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+.metric h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary, #2563eb);
+  margin-bottom: 0.25rem;
+}
+
+.metric p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-muted, rgba(30, 41, 59, 0.7));
+}
+
+/* DARK THEME SPECIFICS (Controlled via data-theme="dark") */
+[data-theme="dark"] .oil-gas-section {
+  background: linear-gradient(135deg, #0f172a, #111827);
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .oil-gas-section p {
+  color: rgba(241, 245, 249, 0.8);
+}
+
+[data-theme="dark"] .metric {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .metric h3 {
+  color: var(--accent, #60a5fa);
+}
+
+[data-theme="dark"] .metric p {
+  color: rgba(241, 245, 249, 0.7);
+}
+
+
+/*
+.oil-gas-section {
+  background: linear-gradient(135deg, #0f172a, #111827);
+
+  color: white;
+}
+  */
+
+ /*
+.oil-metrics {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 2rem;
+
+  margin-top: 2rem;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+
+  padding: 1.5rem;
+
+  border-radius: 20px;
+
+  min-width: 150px;
+
+  text-align: center;
+}
+
+*/
+
+.enterprise-section .feature-card {
+  height: 100%;
+}
+
+.journey-card {
+  background: var(--surface);
+
+  padding: 1.5rem;
+
+  border-radius: 20px;
+
+  margin-bottom: 1rem;
+
+  box-shadow: var(--shadow);
+
+  transition: 0.4s ease;
+}
+
+.journey-card:hover {
+  transform: translateX(10px);
+
+  border-left: 4px solid var(--primary);
+}
+
+.resume-tech-stack .tech-badges span {
+  animation: badgeFloat 4s infinite ease-in-out;
+}
+
+.resume-tech-stack .tech-badges span:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+@keyframes badgeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.certificate-card {
+  background: var(--surface);
+
+  padding: 2rem;
+
+  border-radius: 24px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow);
+
+  transition: 0.4s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-12px);
+
+  box-shadow: 0 25px 50px rgba(37, 99, 235, 0.18);
+}
+
+[data-theme="dark"] .timeline-content,
+[data-theme="dark"] .certificate-card,
+[data-theme="dark"] .journey-card {
+  background: rgba(15, 23, 42, 0.75);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(59, 130, 246, 0.18);
+}
+
+.resume-cta {
+  padding: 8rem 0;
+
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+
+  color: white;
+
+  text-align: center;
+}
+
+.resume-cta h2 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.timeline-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.timeline-skills span {
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(96, 165, 250, 0.25);
+}
+
+.timeline-content {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #2563eb, #06b6d4);
+}
+
+.timeline-image {
+  animation: floatImage 6s ease-in-out infinite;
+  transform: scale(1.05);
+}
+
+.timeline-image img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 24px;
+
+  border: 2px solid rgba(37, 99, 235, 0.25);
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+  transition: all 0.5s ease;
+}
+
+.timeline-image:hover img {
+  transform: scale(1.03);
+}
+
+@keyframes floatImage {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.25);
+}
+
+
+/* ==================================
+   TECH STACK BLOCK CARDS (THEME-AWARE)
+================================== */
+
+.tech-card {
+  position: relative;
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: var(--shadow, 0 10px 30px rgba(0, 0, 0, 0.05));
+}
+
+/* Animated Vertical Accent Line on Left Edge */
+.tech-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary, #2563eb), var(--accent, #06b6d4));
+  transition: width 0.3s ease, filter 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+.tech-card:hover::before {
+  width: 6px;
+  filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.6));
+}
+
+.tech-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tech-icon-title i {
+  font-size: 2rem;
+  color: var(--primary, #2563eb);
+  transition: transform 0.3s ease;
+}
+
+.tech-card:hover .tech-icon-title i {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* Dynamic Typography Colors */
+.tech-icon-title h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text, #1e293b);
+}
+
+.tech-level {
+  font-size: 0.75rem;
+  color: var(--text-muted, #64748b);
+  font-weight: 500;
+}
+
+/* Custom Progress Bar Style */
+.tech-card .progress {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tech-card .progress-bar {
+  background: linear-gradient(90deg, var(--primary, #2563eb), var(--accent, #06b6d4));
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+/* ==================================
+   DARK THEME OVERRIDES ([data-theme="dark"])
+================================== */
+
+[data-theme="dark"] .tech-card {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(59, 130, 246, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .tech-icon-title h4 {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .tech-level {
+  color: rgba(241, 245, 249, 0.6);
+}
+
+[data-theme="dark"] .tech-card .progress {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .tech-icon-title i {
+  color: var(--accent, #60a5fa);
+}
+
+
+
+.certifications-section,
+.resume-stats,
+.resume-cta{
+    padding:120px 0;
+}
+
+/* Certification Cards */
+
+.cert-card{
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    height:100%;
+
+    transition:.4s;
+}
+
+.cert-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 50px rgba(37,99,235,.20);
+}
+
+.cert-icon{
+    width:70px;
+    height:70px;
+
+    border-radius:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:20px;
+
+    background:linear-gradient(
+    135deg,
+    #2563eb,
+    #06b6d4
+    );
+}
+
+.cert-icon i{
+    color:white;
+    font-size:1.7rem;
+}
+
+/* Stats */
+
+.stat-card{
+    text-align:center;
+
+    padding:40px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+}
+
+.stat-card:hover{
+    transform:translateY(-12px);
+}
+
+.stat-card h3{
+    font-size:4rem;
+    font-weight:800;
+
+    background:linear-gradient(
+    135deg,
+    #2563eb,
+    #06b6d4
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+
+
+
+
+/* Base CTA styling using theme-aware variables */
+.resume-cta {
+  padding: 4rem 0;
+  background: var(--cta-bg, linear-gradient(135deg, #0d6efd 0%, #00d2ff 100%));
+  color: #ffffff; /* Default text white on gradient */
+}
+
+.cta-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Fix for the badge contrast */
+.cta-box .section-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff !important; /* Ensures badge text stays visible */
+  font-weight: 600;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+/* Secondary Button (Download Resume) styling */
+.cta-buttons .btn-outline-light {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-buttons .btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #0d6efd;
+}
+
+/* Dark Mode Overrides (when html or body has [data-bs-theme="dark"] or .dark-theme) */
+[data-bs-theme="dark"] .resume-cta,
+body.dark-theme .resume-cta {
+  background: var(--cta-bg-dark, linear-gradient(135deg, #0b132b 0%, #1c2541 100%));
+}
+
+[data-bs-theme="dark"] .cta-box,
+body.dark-theme .cta-box {
+  background: rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+  .timeline-item,
+  .timeline-item.right {
+    flex-direction: column;
+  }
+
+  .timeline-image,
+  .timeline-content {
+    width: 100%;
+  }
+}
