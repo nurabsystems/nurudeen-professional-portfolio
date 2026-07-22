@@ -1,0 +1,182 @@
+ /* ==========================================================================
+   Global / Theme CSS Variables (Adapt automatically if attribute [data-theme="light"] or dark class is set)
+   ========================================================================== */
+:root {
+  --bg-section: #090d16;
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-hover-bg: rgba(255, 255, 255, 0.07);
+  --badge-bg: rgba(59, 130, 246, 0.12);
+  --badge-border: rgba(59, 130, 246, 0.3);
+  --badge-text: #60a5fa;
+  --accent-glow: rgba(99, 102, 241, 0.25);
+  --accent-color: #6366f1;
+}
+
+/* Light Theme Overrides (Triggered by data-theme="light" or .light-theme class on body) */
+[data-theme="light"], body.light-mode {
+  --bg-section: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(226, 232, 240, 0.8);
+  --card-hover-bg: #ffffff;
+  --badge-bg: rgba(37, 99, 235, 0.08);
+  --badge-border: rgba(37, 99, 235, 0.2);
+  --badge-text: #2563eb;
+  --accent-glow: rgba(37, 99, 235, 0.15);
+  --accent-color: #2563eb;
+}
+
+/* ==========================================================================
+   Tech Stack Section Styling
+   ========================================================================== */
+.tech-stack-section {
+  position: relative;
+  background-color: var(--bg-section);
+  padding: 5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+}
+
+/* Subtle background gradient glow behind section */
+.tech-stack-section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 350px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.tech-stack-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Header Styles */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--badge-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+.section-title {
+  color: var(--text-main);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 550px;
+  margin: 0 auto 3rem auto;
+}
+
+/* Grid Layout */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+/* Card Vertical Design & Animations */
+.tech-card {
+  position: relative;
+  border-radius: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+  padding: 1.75rem 1rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  /* Intro floating animation setup */
+  animation: floatSlow 6s ease-in-out infinite alternate;
+}
+
+/* Stagger animation delay across items */
+.tech-card:nth-child(even) {
+  animation-delay: 1.5s;
+}
+
+.tech-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.tech-icon {
+  font-size: 2.2rem;
+  color: var(--text-main);
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.tech-name {
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.tech-category {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Hover Effects */
+.tech-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: var(--card-hover-bg);
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 30px -10px var(--accent-glow);
+}
+
+.tech-card:hover .tech-icon {
+  transform: translateY(-4px) scale(1.15);
+  color: var(--accent-color);
+}
+
+/* Keyframe for Ambient Vertical Float */
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+}
