@@ -56,12 +56,23 @@
   background: linear-gradient(135deg, var(--bg), var(--surface));
 }
 
+
 .resume-title {
-  font-size: clamp(3rem, 6vw, 5rem);
+
+  /* Reduced minimum, preferred scaling factor, and max size */
+  font-size: clamp(3rem, 5vw, 4rem);
+  
+  /* Additional tweaks to keep the vertical height compact: */
+  line-height: 1.15;      /* Tightens vertical space between wrapping lines */
+
+  margin-bottom: 1rem;    /* Ensures spacing below the title isn't too pushy */
+
+
+  /* font-size: clamp(3rem, 6vw, 5rem);*/
 
   font-weight: 900;
 
-  line-height: 1.1;
+  /*line-height: 1.1;*/
 
   background: linear-gradient(135deg, var(--primary), var(--accent));
 
