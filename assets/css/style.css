@@ -366,13 +366,6 @@ a {
 }
 
 .tech-badge {
-  background: var(--card-bg);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-md);
-}
-
-.tech-badge {
   position: absolute;
   padding: 0.7rem 1rem;
   border-radius: 50px;
@@ -412,7 +405,7 @@ a {
   animation-delay: 1.5s;
 }
 
-.badge-django {
+.badge-react {
   top: 45%;
   right: -50px;
   animation-delay: 2s;
