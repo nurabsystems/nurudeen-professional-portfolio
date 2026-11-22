@@ -433,7 +433,7 @@ a {
 =================================== */
 
 .stats-section {
-  padding: 6rem 0;
+ /* padding: 6rem 0;*/
   background: var(--surface);
   position: relative;
 }
@@ -737,7 +737,7 @@ html[data-theme="dark"] .card-number {
    ========================================================================== */
 
 .projects-section {
-  padding: 120px 0;
+  padding: 60px 0;
   /* Light mode baseline layout background */
   background: linear-gradient(180deg, #ffffff, #f8fbff);
   position: relative;
