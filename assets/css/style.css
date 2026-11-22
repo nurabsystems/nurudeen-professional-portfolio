@@ -288,6 +288,7 @@ a {
   font-weight: 900;
   background: linear-gradient(90deg, #2563eb, #14b8a6);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -669,6 +670,9 @@ html[data-theme="dark"] .expertise-card:hover {
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -1441,6 +1445,7 @@ html[data-theme="dark"] .highlight-card p {
   font-weight: 800;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: pulseGlow 3s ease-in-out infinite;
 }
