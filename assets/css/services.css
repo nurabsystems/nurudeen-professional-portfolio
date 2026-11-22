@@ -1,3 +1,7 @@
+
+
+
+
 /* ==========================================================================
    SERVICES CONTAINER GRID & FILTER INTERFACE
    ========================================================================== */
@@ -86,22 +90,25 @@ html[data-theme="dark"] .filter-btn:hover {
 /* ==========================================================================
    DISTINCT UI/UX GRADIENT SCHEMES PER SERVICE CARD CATEGORY
    ========================================================================== */
+/* ==========================================================================
+   UNIFIED COOL-TONE GRADIENT SCHEMES (Removes harsh warm colors)
+   ========================================================================== */
 
-/* Light Theme Card Gradients */
-.highlight-card[data-category="frontend"]       { --card-grad-start: #f3f8ff; --card-grad-end: #e2f0ff; --icon-accent: #2563eb; }
-.highlight-card[data-category="backend"]        { --card-grad-start: #fdf2f8; --card-grad-end: #fce7f3; --icon-accent: #db2777; }
-.highlight-card[data-category="infrastructure"] { --card-grad-start: #f0fdf4; --card-grad-end: #dcfce7; --icon-accent: #16a34a; }
-.highlight-card[data-category="network"]        { --card-grad-start: #fff7ed; --card-grad-end: #ffedd5; --icon-accent: #ea580c; }
-.highlight-card[data-category="data"]           { --card-grad-start: #faf5ff; --card-grad-end: #f3e8ff; --icon-accent: #9333ea; }
-.highlight-card[data-category="consulting"]     { --card-grad-start: #f0fdfa; --card-grad-end: #ccfbf1; --icon-accent: #0d9488; }
+/* Light Theme Card Gradients (Very subtle, cool-toned) */
+.highlight-card[data-category="frontend"]       { --card-grad-start: #f0f7ff; --card-grad-end: #e0f2fe; --icon-accent: #2563eb; } /* Blue */
+.highlight-card[data-category="backend"]        { --card-grad-start: #f5f3ff; --card-grad-end: #ede9fe; --icon-accent: #7c3aed; } /* Violet */
+.highlight-card[data-category="infrastructure"] { --card-grad-start: #f0fdfa; --card-grad-end: #ccfbf1; --icon-accent: #0d9488; } /* Teal */
+.highlight-card[data-category="network"]        { --card-grad-start: #f0f9ff; --card-grad-end: #e0f2fe; --icon-accent: #0284c7; } /* Sky Blue */
+.highlight-card[data-category="data"]           { --card-grad-start: #f8fafc; --card-grad-end: #f1f5f9; --icon-accent: #475569; } /* Slate */
+.highlight-card[data-category="consulting"]     { --card-grad-start: #eef2ff; --card-grad-end: #e0e7ff; --icon-accent: #4f46e5; } /* Indigo */
 
-/* Dark Theme Card Gradients */
+/* Dark Theme Card Gradients (Deep, moody tech colors) */
 html[data-theme="dark"] .highlight-card[data-category="frontend"]       { --card-grad-start: #0f1e36; --card-grad-end: #0b172a; --icon-accent: #3b82f6; }
-html[data-theme="dark"] .highlight-card[data-category="backend"]        { --card-grad-start: #241224; --card-grad-end: #0f172a; --icon-accent: #ec4899; }
-html[data-theme="dark"] .highlight-card[data-category="infrastructure"] { --card-grad-start: #0f2419; --card-grad-end: #0f172a; --icon-accent: #22c55e; }
-html[data-theme="dark"] .highlight-card[data-category="network"]        { --card-grad-start: #241a12; --card-grad-end: #0f172a; --icon-accent: #f97316; }
-html[data-theme="dark"] .highlight-card[data-category="data"]           { --card-grad-start: #1e122b; --card-grad-end: #0f172a; --icon-accent: #a855f7; }
-html[data-theme="dark"] .highlight-card[data-category="consulting"]     { --card-grad-start: #0c2021; --card-grad-end: #0f172a; --icon-accent: #14b8a6; }
+html[data-theme="dark"] .highlight-card[data-category="backend"]        { --card-grad-start: #1e1b4b; --card-grad-end: #0f172a; --icon-accent: #818cf8; }
+html[data-theme="dark"] .highlight-card[data-category="infrastructure"] { --card-grad-start: #042f2e; --card-grad-end: #0f172a; --icon-accent: #2dd4bf; }
+html[data-theme="dark"] .highlight-card[data-category="network"]        { --card-grad-start: #082f49; --card-grad-end: #0f172a; --icon-accent: #38bdf8; }
+html[data-theme="dark"] .highlight-card[data-category="data"]           { --card-grad-start: #1e293b; --card-grad-end: #0f172a; --icon-accent: #94a3b8; }
+html[data-theme="dark"] .highlight-card[data-category="consulting"]     { --card-grad-start: #2e1065; --card-grad-end: #0f172a; --icon-accent: #a78bfa; }
 
 /* ==========================================================================
    RECYCLED CARD CARD ARCHITECTURE WITH GLOWING EFFECTS
@@ -118,6 +125,9 @@ html[data-theme="dark"] .highlight-card[data-category="consulting"]     { --card
   border: 1px solid transparent;
   overflow: hidden;
   z-index: 1;
+
+
+  
 
   /* Dynamically mapping the unique background variables */
   background: linear-gradient(145deg, var(--card-grad-start) 0%, var(--card-grad-end) 100%);
@@ -139,6 +149,7 @@ html[data-theme="dark"] .highlight-card[data-category="consulting"]     { --card
   background: linear-gradient(135deg, var(--icon-accent), #06b6d4, var(--primary), var(--icon-accent));
   background-size: 300% 300%;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
   pointer-events: none;
@@ -165,4 +176,222 @@ html[data-theme="dark"] .services-grid-section .highlight-card:hover {
 
 .services-grid-section .highlight-card:hover::before {
   animation-duration: 3s;
+}
+
+/* ==========================================================================
+   SERVICES PAGE POLISH & UPLIFT
+   ========================================================================== */
+
+/* 1. Separate Filter Controls from the Hero */
+.page-hero {
+  min-height: auto;
+  padding: 4rem 0 2rem; /* Tighten top padding */
+  margin-bottom: 0;
+}
+
+.filter-controls {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Give the active button a bit more punch */
+.filter-btn.active {
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
+}
+
+/* 2. Define the Grid Section spacing */
+.services-grid-section {
+  padding: 2rem 0 6rem; /* Reduced top padding, balanced bottom */
+}
+
+/* 3. Upgrade the Service Cards (Solid structure over floating) */
+.services-grid-section .highlight-card {
+  /* Keep the gradients, but add a solid border */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-clip: padding-box;
+}
+
+html[data-theme="dark"] .services-grid-section .highlight-card {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 4. Perfect the typography inside the cards */
+.services-grid-section .highlight-card h4 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #0f172a; /* Light mode */
+  letter-spacing: -0.5px;
+}
+
+html[data-theme="dark"] .services-grid-section .highlight-card h4 {
+  color: #f8fafc;
+}
+
+.services-grid-section .highlight-card p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+html[data-theme="dark"] .services-grid-section .highlight-card p {
+  color: #cbd5e1;
+}
+
+/* 5. Polish the Capabilities List */
+.service-capabilities-list {
+  list-style: none;
+  padding: 0;
+  margin-top: auto; /* Pushes list to bottom for even alignment */
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 1.5rem;
+}
+
+html[data-theme="dark"] .service-capabilities-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-capabilities-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  color: #334155;
+}
+
+html[data-theme="dark"] .service-capabilities-list li {
+  color: #94a3b8;
+}
+
+/* Custom checkmark colors based on the card's category */
+.service-capabilities-list li i {
+  color: var(--icon-accent, var(--primary));
+  font-size: 1rem;
+  margin-top: 0.15rem; /* Aligns the icon perfectly with the text */
+}
+
+/* 6. Enhance the Hover Glow */
+.services-grid-section .highlight-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 
+    0 25px 50px rgba(15, 23, 42, 0.08), 
+    0 0 40px rgba(37, 99, 235, 0.05); /* Soft, wide ambient glow */
+}
+
+html[data-theme="dark"] .services-grid-section .highlight-card:hover {
+  box-shadow: 
+    0 25px 55px rgba(0, 0, 0, 0.6), 
+    0 0 40px rgba(37, 99, 235, 0.15);
+}
+
+
+/* ==========================================================================
+   SERVICES HERO OPTIMIZATION (Shrink & Reclaim Screen Space)
+   ========================================================================== */
+
+/* 1. Remove the forced height and aggressive padding */
+.page-hero {
+  min-height: auto !important; 
+  padding: 3rem 0 1.5rem !important; /* Reduced top and bottom padding */
+  margin-bottom: 0;
+  display: block !important; /* Override flex centering */
+}
+
+/* 2. Drastically scale down the massive main title */
+.page-title {
+  font-size: clamp(2rem, 3.5vw, 3rem) !important; /* Maxes out at 48px instead of 80px */
+  line-height: 1.15;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -1px;
+}
+
+/* 3. Tighten the subtitle and badge spacing */
+.page-subtitle {
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.page-hero .section-badge {
+  margin-bottom: 0;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* 4. Pull the filter controls up right under the hero text */
+.filter-controls {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* 5. Drastically reduce the gap before the cards start */
+.services-grid-section {
+  padding-top: 0 !important;
+  padding-bottom: 5rem;
+}
+
+
+/* ==========================================================================
+   SERVICES PAGE FINAL POLISH
+   ========================================================================== */
+
+/* 1. STOP THE CARDS FROM FLOATING INTO THE HEADER */
+/* This overrides the floatCard animation inherited from the main style.css */
+.services-grid-section .highlight-card {
+  animation: none !important; 
+}
+
+/* Instead, let's give them a subtle fade-in animation when the page loads */
+.services-grid-section .highlight-card.active {
+  animation: none !important; /* Ensure no conflicts */
+}
+
+/* 2. BEAUTIFY THE DEFAULT FILTER BUTTONS */
+.filter-btn {
+  /* Subtle gradient background by default */
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  color: #334155; /* Darker text for better contrast */
+  border: 1px solid #cbd5e1; /* Visible, clean border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  font-weight: 600;
+}
+
+/* Dark Mode default filter buttons */
+html[data-theme="dark"] .filter-btn {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  color: #cbd5e1;
+  border: 1px solid #334155; /* Visible slate border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 3. THE HOVER STATE (For non-active buttons) */
+.filter-btn:hover:not(.active) {
+  background: #ffffff;
+  color: var(--primary, #2563eb);
+  border-color: var(--primary, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.1);
+}
+
+html[data-theme="dark"] .filter-btn:hover:not(.active) {
+  background: #1e293b;
+  color: #60a5fa;
+  border-color: #60a5fa;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.2);
+}
+
+/* 4. THE ACTIVE STATE (Solid, branded, and pops) */
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--primary, #2563eb), var(--accent, #14b8a6));
+  color: #ffffff !important;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px); /* Lifts it slightly to show it's selected */
 }

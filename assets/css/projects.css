@@ -161,6 +161,238 @@
   color: var(--accent-color);
 }
 
+/* ==========================================================================
+   PROJECTS PAGE HERO OPTIMIZATION
+   ========================================================================== */
+
+/* 1. Push the hero up and reduce forced height */
+.page-hero {
+  min-height: auto; 
+  padding: 3rem 0 2rem; 
+  margin-bottom: 0; 
+  scroll-margin-top: 80px; /* Prevents sticky navbar overlap */
+}
+
+/* 2. Scale down the massive main title */
+.page-title {
+  font-size: clamp(2rem, 3.5vw, 3.2rem); 
+  letter-spacing: -1px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+/* 3. Tighten the subtitle and badge spacing */
+.page-subtitle {
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.page-hero .section-badge {
+  margin-bottom: 0;
+  padding: 0.5rem 1.2rem; 
+}
+
+/* 4. Pull the Featured Projects section UP closer to the hero */
+.projects-section {
+  padding-top: 2rem !important; 
+  padding-bottom: 5rem !important;
+}
+
+/* 5. Adjust the spacing inside the Featured Projects header */
+.projects-section .section-header {
+  margin-bottom: 3rem; /* Reduces the gap before the project cards */
+}
+
+.projects-section .section-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem); 
+}
+
+/* 6. Fix the spacing between the two "View Main Projects Repo" buttons */
+.projects-cta {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+/* ==========================================================================
+   FINAL PROJECTS PAGE TIDY UP
+   ========================================================================== */
+
+/* 1. Remove any remaining gap under the hero */
+.page-hero {
+  padding-bottom: 0; 
+  margin-bottom: 0;
+}
+
+.projects-section {
+  /* Pulls the section up to seamlessly merge with the hero background */
+  margin-top: -2rem; 
+}
+
+/* 2. Fix the double CTA buttons at the bottom */
+/* Target the parent container of the CTAs to flex them together */
+.projects-section .container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   PROJECT CARDS: DISTINCTIVE BORDERS & ELEVATION
+   ========================================================================== */
+
+/* ==========================================================================
+   PROJECT CARDS: DISTINCTIVE VISIBLE BORDERS
+   ========================================================================== */
+
+/* 1. Base Card Styling (Light Mode) */
+.project-card {
+  /* Default solid border so it's always visible */
+  border: 2px solid #cbd5e1; 
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Soft shadow for depth */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 2. Base Card Styling (Dark Mode) */
+html[data-theme="dark"] .project-card,
+body.dark-theme .project-card,
+.dark-mode .project-card {
+  border: 2px solid #334155; /* Slate border for dark mode */
+  background: #1e293b; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. Hover State (Light Mode) */
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary, #2563eb); /* Brand blue border on hover */
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15); /* Blue glow shadow */
+}
+
+/* 4. Hover State (Dark Mode) */
+html[data-theme="dark"] .project-card:hover,
+body.dark-theme .project-card:hover,
+.dark-mode .project-card:hover {
+  border-color: #60a5fa; /* Bright blue border on hover */
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.5), 
+    0 0 20px rgba(37, 99, 235, 0.2);
+}
+
+/* 5. Inner Image Frame Border */
+.project-image {
+  border-bottom: 2px solid #cbd5e1; /* Solid divider line */
+}
+
+html[data-theme="dark"] .project-image,
+body.dark-theme .project-image,
+.dark-mode .project-image {
+  border-bottom: 2px solid #334155;
+}
+
+
+
+/* ==========================================================================
+   TECH STACK SECTION: DISTINCT VISUAL IDENTITY
+   ========================================================================== */
+
+/* 1. Create a distinct background stage for the section */
+.tech-stack-section {
+  background-color: var(--bg-section, #f8fafc); 
+  /* Adds a soft gradient accent to separate it from the white section above */
+  border-top: 1px solid rgba(37, 99, 235, 0.1);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2. Dark mode background adjustment */
+html[data-theme="dark"] .tech-stack-section,
+body.dark-theme .tech-stack-section {
+  background-color: #0b1120; /* Slightly darker than the main bg to stand out */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 3. Upgrade the Tech Cards to look like solid tiles */
+.tech-card {
+  background: #ffffff;
+  border: 2px solid #e2e8f0; /* Solid, visible border */
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .tech-card,
+body.dark-theme .tech-card {
+  background: #1e293b;
+  border: 2px solid #334155;
+}
+
+/* 4. Add a vibrant hover effect to the Tech Cards */
+.tech-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color, #2563eb);
+  box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.15);
+}
+
+/* 5. Make the tech icons pop slightly more */
+.tech-card:hover .tech-icon {
+  transform: scale(1.15) rotate(5deg);
+  color: var(--accent-color, #2563eb);
+}
+
+
+/* Group the two CTA links side-by-side on desktop */
+@media (min-width: 768px) {
+  /* Select the specific CTA container to act as a wrapper */
+  .projects-section > .container > div:has(.btn-view-all) {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Spacing between the two buttons */
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Remove the old margin-top from the individual CTAs */
+  .projects-cta {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* On mobile, stack them nicely with equal spacing */
+@media (max-width: 767px) {
+  .projects-cta {
+    margin-top: 2rem !important;
+    margin-bottom: 0 !important;
+    text-align: center;
+  }
+  .projects-cta:last-child {
+    margin-bottom: 2rem !important;
+  }
+}
+
+
+/* Make the CTA buttons display inline on desktop for a cleaner look */
+@media (min-width: 768px) {
+  .projects-section > .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .projects-cta {
+    display: inline-block;
+    margin: 2rem 1rem 0 1rem;
+  }
+  /* Optional: Center the two buttons together */
+  .projects-section > .container > .projects-cta:nth-last-child(2) {
+    margin-top: 4rem;
+  }
+}
+
+
 /* Keyframe for Ambient Vertical Float */
 @keyframes floatSlow {
   0% {

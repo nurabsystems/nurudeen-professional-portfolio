@@ -362,6 +362,61 @@ body[data-theme="dark"] .timeline-card {
   transform: rotate(-45deg);
 }
 
+
+/* ==========================================================================
+   ABOUT PAGE HERO OPTIMIZATION (Tightened & Pushed Up)
+   ========================================================================== */
+
+/* 1. Push the hero up by reducing min-height and adjusting padding */
+.page-hero {
+  min-height: auto; /* Removes the forced 40vh/60vh height */
+  padding: 3rem 0 2rem; /* Significantly reduces top padding */
+  margin-bottom: 0; 
+}
+
+/* 2. Scale down the massive main title just a bit more */
+.page-title {
+  font-size: clamp(2rem, 3.5vw, 3rem); /* Slightly smaller than the last step */
+  letter-spacing: -1px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 3. Tighten the subtitle and badge spacing */
+.page-subtitle {
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.page-hero .section-badge {
+  margin-bottom: 0;
+  padding: 0.5rem 1.2rem; /* Slightly smaller badge */
+}
+
+/* 4. Push the "My Story" section UP to create a tighter transition */
+.about-story {
+  padding-top: 2rem !important; /* Overrides the Bootstrap py-5 */
+  padding-bottom: 5rem !important;
+}
+
+/* 5. Tighten the "My Story" heading and image size */
+.about-story .section-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem); 
+  margin-bottom: 1rem;
+}
+
+.about-story .hero-image {
+  max-width: 100%;
+  max-height: 400px; /* Caps the image height even more */
+  object-fit: cover;
+  border-radius: 20px; /* Softens the image corners */
+}
+
+
+
+
+
 /* ==========================================================================
    RESPONSIVE LAYOUT CONSTRAINTS (Mobile Breakdown)
    ========================================================================== */
