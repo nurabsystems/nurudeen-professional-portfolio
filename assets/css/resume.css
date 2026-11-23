@@ -8,7 +8,7 @@
 .enterprise-section,
 .software-journey,
 .resume-tech-stack,
-.certifications-section,
+.certifications-section,S
 .resume-cta {
   position: relative;
   overflow: hidden;
@@ -77,6 +77,7 @@
   background: linear-gradient(135deg, var(--primary), var(--accent));
 
   -webkit-background-clip: text;
+  background-clip: text;
 
   -webkit-text-fill-color: transparent;
 }
@@ -638,6 +639,8 @@
     );
 
     -webkit-background-clip:text;
+    background-clip:text;
+
     -webkit-text-fill-color:transparent;
 }
 
@@ -696,19 +699,188 @@ body.dark-theme .cta-box {
 }
 
 
+/* ==========================================================================
+   RESUME CTA SECTION: PREMIUM GLASSMORPHISM POLISH
+   ========================================================================== */
 
+/* 1. The Outer Section Background */
+.resume-page .cta-section,
+.cta-section {
+  padding: 100px 0;
+  background: 
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(20, 184, 166, 0.08), transparent 40%);
+  position: relative;
+  overflow: hidden;
+}
 
+html[data-theme="dark"] .cta-section {
+  background: 
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.15), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(20, 184, 166, 0.15), transparent 40%);
+}
 
+/* 2. The Glass Card Container */
+.cta-wrapper {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  border-radius: 32px;
+  
+  /* Frosted Glass Effect */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
+/* Dark Mode Glass Effect */
+html[data-theme="dark"] .cta-wrapper {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+}
 
+/* 3. A subtle glowing accent behind the card */
+.cta-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 34px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  z-index: -1;
+  opacity: 0.15;
+  filter: blur(10px);
+  transition: opacity 0.4s ease;
+}
 
+.cta-wrapper:hover::before {
+  opacity: 0.3;
+}
 
+/* 4. Typography Polish */
+.cta-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.25rem;
+  color: #0f172a; /* Deep slate for light mode */
+}
 
+html[data-theme="dark"] .cta-title {
+  color: #ffffff;
+}
 
+.cta-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+}
 
+html[data-theme="dark"] .cta-text {
+  color: #cbd5e1;
+}
 
+/* 5. Button Layout & Interactivity */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
 
+.cta-buttons .btn {
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 50px; /* Pill shape */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
+/* Primary Button (Start a Project) */
+.cta-buttons .btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border: none;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.cta-buttons .btn-primary:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.35);
+}
+
+/* Secondary Button (Download Resume) */
+.cta-buttons .btn-outline-primary {
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  background: transparent;
+}
+
+.cta-buttons .btn-outline-primary:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+}
+
+/* Dark mode specific border for secondary button */
+html[data-theme="dark"] .cta-buttons .btn-outline-primary {
+  color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+html[data-theme="dark"] .cta-buttons .btn-outline-primary:hover {
+  background: #60a5fa;
+  color: #0f172a;
+
+}
+
+/* ==========================================================================
+   RESUME LAYOUT: FIX WASTED VERTICAL SPACE
+   ========================================================================== */
+
+/* 1. Tighten the bottom of the Certifications section */
+.certifications-section {
+  padding-top: 6rem;
+  padding-bottom: 3rem !important; /* Significantly reduces the gap below the cards */
+}
+
+/* 2. Pull the CTA section up and reduce its massive padding */
+.cta-section {
+  padding-top: 2rem !important; 
+  padding-bottom: 6rem !important;
+}
+
+/* 3. Ensure the glass card itself doesn't have overly aggressive top margins */
+.cta-wrapper {
+  margin-top: 0 !important;
+}
+
+/* 4. Fix any residual global spacing issues affecting the CTA container */
+.cta-wrapper.reveal-card {
+  margin-bottom: 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .cta-wrapper {
+    padding: 3rem 1.5rem;
+    border-radius: 24px;
+  }
+  .cta-buttons .btn {
+    width: 100%; /* Full width buttons on mobile */
+  }
+}
 
 
 
